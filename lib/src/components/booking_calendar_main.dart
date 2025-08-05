@@ -164,7 +164,6 @@ class _BookingCalendarMainState extends State<BookingCalendarMain> {
                 children: [
                   CommonCard(
                     child: TableCalendar(
-                        formatButtonVisible= false,
                       startingDayOfWeek: widget.startingDayOfWeek?.toTC() ??
                           tc.StartingDayOfWeek.monday,
                       holidayPredicate: (day) {
@@ -204,6 +203,7 @@ class _BookingCalendarMainState extends State<BookingCalendarMain> {
                           DateTime.now().add(const Duration(days: 1000)),
                       focusedDay: _focusedDay,
                       calendarFormat: _calendarFormat,
+                      headerStyle: const HeaderStyle(formatButtonVisible: false),
                       calendarStyle:
                           const CalendarStyle(isTodayHighlighted: true),
                       selectedDayPredicate: (day) {
